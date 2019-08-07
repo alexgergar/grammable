@@ -15,5 +15,15 @@ RSpec.describe GramsController, type: :controller do
     end
   end
 
+  describe "grams#create action" do
+    it "should submit the new form, save to db and redirect to root" do
+      post :create, params: { gram: { message: 'Hello!' } }
+    expect(response).to redirect_to root_path
+
+    gram = Gram.last
+    expect(gram.message).to eq("Hello!")
+    end
+  end
+
 
 end
