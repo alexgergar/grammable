@@ -1,9 +1,12 @@
+<div class="col-10 offset-1 col-sm-8 offset-sm02 col-md-6 offset-md-3 card form">
 
-<h1>Gram!</h1>
+  <h1 class="align-items-center">Add a New Gram!</h1>
 
-<%= simple_form_for @gram do |f| %>
-  <%= f.input :picture %>
-  <%= f.input :message %>
-  <%= f.submit "Post!" %>
+    <%= simple_form_for @gram do |f| %>
+      <%= f.input :picture %>
+      <%= f.input :message %>
+      <%= f.submit "Post!", class: 'my-btn' %>
 
-<% end %>
+  <% end %>
+
+</div>

@@ -1,8 +1,36 @@
-<h1>Grams!</h1>
+<div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+  <% @grams.each do |gram| %>
+  <div class="card">
+    <div class="handle"><%= gram.user.email %></div>
+      <%= image_tag gram.picture.url.to_s, class: "w-100" %>
+      <p>
+        <%= gram.message %>
+      </p>
+    <div class="row justify-content-end gram-actions m-0 p-0">
+        <% if current_user && current_user == gram.user %>
+          <%= link_to 'Edit', edit_gram_path(gram), class: "pr-3 m-0" %>
+          <%= link_to 'Delete Gram', gram_path(gram), method: :delete, data: {confirm: 'Are you sure?'}, class: "pr-3 m-0" %>
+        <% end %>
+    </div>
+    <br class="clear-fix" />
+    <div class="comments p-3">
+      <h3>Comments</h3>
+        <% gram.comments.each do |comment| %>
+          <div class="comment">
+            <span class="comment_handle">
+              <%= comment.user.email %>
+            </span>
 
-<% @grams.each do |gram| %>
-<div>
-  <%= image_tag(gram.picture.url.to_s) %>
-  <%= gram.message %>
+            <%= comment.message %>
+          </div>
+        <% end %>
+      <h5>Add a comment</h5>
+      <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
+        <%= f.input :message %>
+        <%= f.submit 'Add Comment', class: 'my-btn p-1' %>
+      <% end %>
+    </div>
+  </div>
+    <% end %>
 </div>
-<% end %>
+  
