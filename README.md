@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Grammable is a Instagram Style App that was built with Ruby on Rails.
 
-Things you may want to cover:
+You can see a live version here: https://grammable-alex-gergar.herokuapp.com/
 
-* Ruby version
+This site allows users to photos and then comment on others photos. 
 
-* System dependencies
+This was created to be learn the process of testing applications. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+See screenshots below.
+<img src="./app/assets/images/Grammable-1.png" alt="Homepage Screenshot">
+<img src="./app/assets/images/Grammable-2.png" alt="Homepage 2 Screenshot">
